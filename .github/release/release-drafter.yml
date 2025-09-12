@@ -1,20 +1,43 @@
-name: Release Drafter
+name-template: 'v$RESOLVED_VERSION 🌈'
+tag-template: 'v$RESOLVED_VERSION'
+categories:
+  - title: '❗️ Breaking Changes'
+    labels:
+      - 'major'
+  - title: '🚀 Features'
+    labels:
+      - 'enhancement'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'fix'
+exclude-labels:
+  - 'chore'
+autolabeler:
+  - label: 'chore'
+    branch:
+      - '/^chore\/.+/'
+      - '/^docs\/.+/'
+  - label: 'fix'
+    branch:
+      - '/^fix\/.+/'
+  - label: 'enhancement'
+    branch:
+      - '/^feature\/.+/'
+      - '/^feat\/.+/'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+change-title-escapes: '\<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
+version-resolver:
+  major:
+    labels:
+      - 'major'
+  minor:
+    labels:
+      - 'minor'
+  patch:
+    labels:
+      - 'patch'
+  default: patch
+template: |
+  ## Changes
 
-on:
-  pull_request:
-    types: [synchronize]
-
-permissions:
-  contents: read
-
-jobs:
-  update_release_draft:
-    permissions:
-      contents: write
-      pull-requests: write
-    runs-on: ubuntu-latest
-    steps:
-      - uses: release-drafter/release-drafter@v6
-        config-name: .github/release/release-drafter.yml
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  $CHANGES
