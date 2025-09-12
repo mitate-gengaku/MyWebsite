@@ -1,8 +1,13 @@
 ---
+import { useTranslations } from "@/utils/i18n";
+
 // import '../styles/global.css'
+
+const lang = Astro.currentLocale
+const t = useTranslations(lang);
 ---
 
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -12,5 +17,6 @@
 	</head>
 	<body>
 		<h1 class="">Astro</h1>
+		<p>{t({ ja: 'こんにちは', en: 'Hello' })}</p>
 	</body>
 </html>
