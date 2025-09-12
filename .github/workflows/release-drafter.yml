@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: release-drafter/release-drafter@v6
         with:
-          config-name: .github/release/release-drafter.yml
+          config-name: ./release/release-drafter.yml
           publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
