@@ -1,0 +1,27 @@
+[
+  {
+    "name": "major",
+    "description": "Breaking changes that require major version bump",
+    "color": "d73a4a"
+  },
+  {
+    "name": "minor",
+    "description": "New features that require minor version bump",
+    "color": "0052cc"
+  },
+  {
+    "name": "patch",
+    "description": "Bug fixes and small changes that require patch version bump",
+    "color": "28a745"
+  },
+  {
+    "name": "chore",
+    "description": "Maintenance tasks, documentation updates, and other routine work",
+    "color": "fef2c0"
+  },
+  {
+    "name": "fix",
+    "description": "Bug fixes and corrections",
+    "color": "d73a4a"
+  }
+]
