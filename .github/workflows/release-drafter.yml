@@ -2,7 +2,10 @@ name: Release Drafter
 
 on:
   pull_request:
-    types: [synchronize]
+    types: 
+      - closed
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -17,5 +20,6 @@ jobs:
       - uses: release-drafter/release-drafter@v6
         with:
           config-name: .github/release/release-drafter.yml
+          publish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
