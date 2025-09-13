@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export const SNS = () => (
   <div className="space-y-2">
-    <h4 className="font-semibold text-base">Follow</h4>
+    <h4 className="font-semibold text-sm lg:text-base">Follow</h4>
     <ul className="flex items-center gap-1">
       <li>
         <Button variant={"outline"} size={"icon"} asChild>

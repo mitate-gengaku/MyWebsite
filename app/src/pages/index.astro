@@ -1,21 +1,24 @@
 ---
-import { Footer } from '@/components/Footer'
-import '../styles/global.css'
-import '@fontsource/twinkle-star';
+import "../styles/global.css";
+import "@fontsource/twinkle-star";
 
-const currentLocale = Astro.currentLocale
-const lang = currentLocale === "ja" ? "ja" : "en"
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+
+const currentLocale = Astro.currentLocale;
+const lang = currentLocale === "ja" ? "ja" : "en";
 ---
 
 <html lang={lang}>
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <Header />
+    <Footer />
+  </body>
 </html>
