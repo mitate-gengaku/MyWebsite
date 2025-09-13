@@ -1,10 +1,10 @@
 ---
-import { useTranslations } from "@/utils/i18n";
+import { Footer } from '@/components/Footer'
+import '../styles/global.css'
+import '@fontsource/twinkle-star';
 
-// import '../styles/global.css'
-
-const lang = Astro.currentLocale
-const t = useTranslations(lang);
+const currentLocale = Astro.currentLocale
+const lang = currentLocale === "ja" ? "ja" : "en"
 ---
 
 <html lang={lang}>
@@ -16,7 +16,6 @@ const t = useTranslations(lang);
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1 class="">Astro</h1>
-		<p>{t({ ja: 'こんにちは', en: 'Hello' })}</p>
+		<Footer />
 	</body>
 </html>
