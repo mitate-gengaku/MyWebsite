@@ -1,5 +1,5 @@
 import { PROFILE_ASCII } from "@/config/profile-ascii";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 export const ProfileAscii = () => (
   <div className="hidden lg:block">

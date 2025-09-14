@@ -1,7 +1,7 @@
 import type React from "react";
 
 import { TITLE } from "@/config/title";
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 type IconProps = {
   charClassName?: string | undefined;
