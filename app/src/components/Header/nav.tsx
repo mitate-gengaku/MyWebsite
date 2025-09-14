@@ -5,7 +5,7 @@ export const NavMenu = () => (
         <a href="#about">About</a>
       </li>
       <li>
-        <a href="#product">Products</a>
+        <a href="#project">Projects</a>
       </li>
       <li>
         <a href="#blog">Blog</a>

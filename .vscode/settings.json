@@ -20,5 +20,7 @@
   },
   "editor.quickSuggestions": {
     "strings": true
-  }
+  },
+  "typescript.autoClosingTags": true,
+  "typescript.preferences.includePackageJsonAutoImports": "auto"
 }

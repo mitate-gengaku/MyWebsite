@@ -4,6 +4,7 @@ import "@fontsource/twinkle-star";
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { About } from "@/components/Sections/About";
 
 const currentLocale = Astro.currentLocale;
 const lang = currentLocale === "ja" ? "ja" : "en";
@@ -19,6 +20,7 @@ const lang = currentLocale === "ja" ? "ja" : "en";
   </head>
   <body>
     <Header />
+    <About />
     <Footer />
   </body>
 </html>
