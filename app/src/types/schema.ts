@@ -51,7 +51,7 @@ export type Project<T = "get"> = Structure<
   }
 >;
 
-interface Project_Features {
+export interface Project_Features {
   fieldId: "features";
   /**
    * 機能

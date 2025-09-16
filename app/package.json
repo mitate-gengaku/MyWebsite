@@ -13,6 +13,7 @@
     "add": "npx shadcn@latest add"
   },
   "dependencies": {
+    "@ascorbic/feed-loader": "^2.0.1",
     "@astrojs/react": "^4.3.1",
     "@fontsource/twinkle-star": "^5.2.6",
     "@radix-ui/react-slot": "^1.2.3",

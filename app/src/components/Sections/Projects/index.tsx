@@ -2,7 +2,7 @@ import { Title } from "@/components/Common/title";
 import { Cards } from "@/components/Sections/Projects/cards";
 import { getProjects } from "@/utils/microcms";
 
-const { contents: projects } = await getProjects({
+const { contents: projects = [] } = await getProjects({
   orders: "createdAt",
 });
 

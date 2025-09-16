@@ -2,13 +2,21 @@
 import "../styles/global.css";
 import "@fontsource/twinkle-star";
 
+import { getCollection } from "astro:content";
+
+import type { CollectionEntry, AnyEntryMap } from "astro:content";
+
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { About } from "@/components/Sections/About";
+import { Blog } from "@/components/Sections/Blog";
 import { Projects } from "@/components/Sections/Projects";
 
 const currentLocale = Astro.currentLocale;
 const lang = currentLocale === "ja" ? "ja" : "en";
+
+const articleCollection: CollectionEntry<keyof AnyEntryMap>[] =  await getCollection("zenn");
+const articles = articleCollection.slice(0, 6);
 ---
 
 <html lang={lang}>
@@ -23,6 +31,7 @@ const lang = currentLocale === "ja" ? "ja" : "en";
     <Header />
     <About />
     <Projects client:load />
+    <Blog articles={articles} />
     <Footer />
   </body>
 </html>

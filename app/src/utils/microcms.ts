@@ -8,12 +8,19 @@ export const client = createClient({
 });
 
 export const getProjects = async (queries?: MicroCMSQueries) => {
-  const posts = await client.getList<Project>({
-    endpoint: "projects",
-    queries,
-  });
+  try {
+    const posts = await client.getList<Project>({
+      endpoint: "projects",
+      queries,
+    });
 
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
-  return posts;
+    return posts;
+  } catch (e) {
+    console.error("Failed to fetch contents:", e);
+    return {
+      contents: [],
+    };
+  }
 };
