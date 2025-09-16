@@ -43,7 +43,7 @@ export const Blog = ({ articles }: Props) => (
             }
             footer={
               <div className="w-full flex items-center justify-between text-gray-500">
-                <p>{authors[0].name}</p>
+                <p>Mitate Gengaku</p>
                 <p className=" text-sm">{convertToYYYYMMDD(published)}</p>
               </div>
             }
@@ -56,7 +56,7 @@ export const Blog = ({ articles }: Props) => (
         className="mx-auto border border-neutral-300"
         asChild
       >
-        <a href="https://zenn.dev/mitate_gengaku">記事一覧ページ</a>
+        <a href="https://zenn.dev/mitate_gengaku">All articles</a>
       </Button>
     </div>
   </section>
