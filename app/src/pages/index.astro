@@ -15,7 +15,8 @@ import { Projects } from "@/components/Sections/Projects";
 const currentLocale = Astro.currentLocale;
 const lang = currentLocale === "ja" ? "ja" : "en";
 
-const articleCollection: CollectionEntry<keyof AnyEntryMap>[] =  await getCollection("zenn");
+const articleCollection: CollectionEntry<keyof AnyEntryMap>[] =
+  await getCollection("zenn");
 const articles = articleCollection.slice(0, 6);
 ---
 

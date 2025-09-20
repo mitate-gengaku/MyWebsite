@@ -9,7 +9,8 @@
     "astro": "astro",
     "lint": "eslint . --ext .js,.mjs,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.mjs,.ts,.tsx --fix",
-    "format": "prettier --write '**/*.{astro,ts,tsx,js,mjs,jsx,md,json}' && npm run lint:fix",
+    "fmt": "prettier --write '**/*.{astro,ts,tsx,js,mjs,jsx,md,json}'",
+    "format": "npm run fmt && npm run lint:fix && npm run fmt",
     "add": "npx shadcn@latest add"
   },
   "dependencies": {
