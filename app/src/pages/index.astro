@@ -1,22 +1,38 @@
 ---
-import { useTranslations } from "@/utils/i18n";
+import "../styles/global.css";
+import "@fontsource/twinkle-star";
 
-// import '../styles/global.css'
+import { getCollection } from "astro:content";
 
-const lang = Astro.currentLocale
-const t = useTranslations(lang);
+import type { CollectionEntry, AnyEntryMap } from "astro:content";
+
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { About } from "@/components/Sections/About";
+import { Blog } from "@/components/Sections/Blog";
+import { Projects } from "@/components/Sections/Projects";
+
+const currentLocale = Astro.currentLocale;
+const lang = currentLocale === "ja" ? "ja" : "en";
+
+const articleCollection: CollectionEntry<keyof AnyEntryMap>[] =
+  await getCollection("zenn");
+const articles = articleCollection.slice(0, 6);
 ---
 
 <html lang={lang}>
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1 class="">Astro</h1>
-		<p>{t({ ja: 'こんにちは', en: 'Hello' })}</p>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <Header />
+    <About />
+    <Projects client:load />
+    <Blog articles={articles} />
+    <Footer />
+  </body>
 </html>

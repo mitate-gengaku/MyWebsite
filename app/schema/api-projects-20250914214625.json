@@ -1,0 +1,62 @@
+{
+  "apiFields": [
+    {
+      "fieldId": "name",
+      "name": "プロジェクト名",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "fieldId": "description",
+      "name": "プロジェクトの説明",
+      "kind": "textArea",
+      "required": true
+    },
+    {
+      "fieldId": "url",
+      "name": "プロジェクトのURL",
+      "kind": "text",
+      "required": true
+    },
+    {
+      "fieldId": "features",
+      "name": "機能",
+      "kind": "repeater",
+      "required": false,
+      "customFieldCreatedAtList": ["2025-09-14T11:46:14.356Z"],
+      "repeaterCountLimitValidation": { "repeatCount": { "min": 1, "max": 3 } }
+    },
+    {
+      "fieldId": "image",
+      "name": "プロジェクトのスクリーンショット",
+      "kind": "media",
+      "required": true
+    },
+    {
+      "fieldId": "available",
+      "name": "プロジェクトが利用可能か",
+      "kind": "boolean",
+      "required": true,
+      "booleanInitialValue": true
+    }
+  ],
+  "customFields": [
+    {
+      "createdAt": "2025-09-14T11:46:14.356Z",
+      "fieldId": "features",
+      "name": "機能",
+      "fields": [
+        {
+          "idValue": "yk-rlWKMNG",
+          "fieldId": "feature",
+          "name": "機能",
+          "kind": "text",
+          "required": false
+        }
+      ],
+      "position": [["yk-rlWKMNG"]],
+      "updatedAt": "2025-09-14T11:46:14.356Z",
+      "viewerGroup": "A-d"
+    }
+  ]
+}
